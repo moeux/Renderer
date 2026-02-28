@@ -19,9 +19,11 @@ public partial class MainWindow : Window
         _surface = this.FindControl<SkiaView>("Surface");
 
         _surface?.AddVisualizer(
+            new ArithmeticVisualizer(),
+            new BounceVisualizer(),
             new CircleVisualizer(),
             new ModuloVisualizer(),
-            new BounceVisualizer());
+            new TrigonometryVisualizer());
     }
 
     private void OnClosed(object? sender, EventArgs e)
