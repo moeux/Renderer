@@ -1,5 +1,7 @@
 # Renderer
 
+![banner](img/banner.png)
+
 A small Avalonia + SkiaSharp playground for real-time 2D visualizers.
 
 The app hosts multiple visualizer implementations and lets you switch between them at runtime.
