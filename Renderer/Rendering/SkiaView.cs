@@ -39,6 +39,6 @@ public sealed class SkiaView : Control, IDisposable
         if (_index >= Visualizers.Count) return;
 
         context.Custom(new SkiaDrawOperation(new Rect(0, 0, Bounds.Width, Bounds.Height), Visualizers[_index]));
-        Dispatcher.UIThread.InvokeAsync(InvalidateVisual, DispatcherPriority.Background);
+        Dispatcher.UIThread.InvokeAsync(InvalidateVisual, DispatcherPriority.Render);
     }
 }
