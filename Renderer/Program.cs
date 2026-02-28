@@ -1,5 +1,6 @@
 ﻿using System;
 using Avalonia;
+using Avalonia.X11;
 
 namespace Renderer;
 
@@ -21,6 +22,11 @@ internal class Program
         return AppBuilder.Configure<App>()
             .UseSkia()
             .UsePlatformDetect()
+            .With(new X11PlatformOptions
+            {
+                UseDBusMenu = false,
+                UseDBusFilePicker = false
+            })
             .WithInterFont()
             .LogToTrace();
     }
