@@ -1,6 +1,5 @@
 ﻿using System;
 using Avalonia;
-using Avalonia.X11;
 
 namespace Renderer;
 
