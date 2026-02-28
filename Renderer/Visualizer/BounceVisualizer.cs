@@ -16,7 +16,7 @@ public class BounceVisualizer() : VisualizerBase("Bounce")
     private float _verticalRadius = Radius;
     private float _y;
 
-    protected override void DrawFrame(SKCanvas canvas, Rect bounds)
+    protected override void DrawFrame(SKCanvas canvas, Rect bounds, long elapsedTicks)
     {
         _y += _force;
 

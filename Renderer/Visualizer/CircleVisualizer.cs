@@ -1,3 +1,4 @@
+using System;
 using Avalonia;
 using Renderer.Rendering;
 using SkiaSharp;
@@ -12,8 +13,9 @@ public class CircleVisualizer() : VisualizerBase("Circle")
     private int _radiusStep = 1;
     private float _x;
 
-    protected override void DrawFrame(SKCanvas canvas, Rect bounds)
+    protected override void DrawFrame(SKCanvas canvas, Rect bounds, long elapsedTicks)
     {
+        Console.WriteLine(elapsedTicks);
         _x += Step;
         _radiusStep = _radius switch
         {

@@ -26,7 +26,7 @@ public class ModuloVisualizer : VisualizerBase
         _paint = new SKPaint { IsAntialias = true, Shader = shader };
     }
 
-    protected override void DrawFrame(SKCanvas canvas, Rect bounds)
+    protected override void DrawFrame(SKCanvas canvas, Rect bounds, long elapsedTicks)
     {
         canvas.DrawRect(bounds.ToSKRect(), _paint);
     }
