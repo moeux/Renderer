@@ -7,16 +7,16 @@ namespace Renderer.Visualizer;
 
 public class CircleVisualizer() : VisualizerBase("Circle")
 {
-    private const int Step = 5;
+    private const int Speed = 100;
     private SKPaint _paint = new() { Color = SKColors.Red, IsAntialias = true };
     private int _radius = 50;
     private int _radiusStep = 1;
-    private float _x;
+    private double _x;
 
     protected override void DrawFrame(SKCanvas canvas, Rect bounds, long elapsedTicks)
     {
-        Console.WriteLine(elapsedTicks);
-        _x += Step;
+        var elapsedTime = (double)elapsedTicks / TimeSpan.TicksPerSecond;
+        _x += Speed * elapsedTime;
         _radiusStep = _radius switch
         {
             <= 10 => 1,
@@ -34,7 +34,7 @@ public class CircleVisualizer() : VisualizerBase("Circle")
 
         if (_x - _radius >= bounds.Right) _x = (float)(bounds.Left + _radius);
 
-        canvas.DrawCircle(_x, (float)bounds.Center.Y, _radius, _paint);
+        canvas.DrawCircle((float)_x, (float)bounds.Center.Y, _radius, _paint);
     }
 
     protected override void Dispose(bool disposing)
