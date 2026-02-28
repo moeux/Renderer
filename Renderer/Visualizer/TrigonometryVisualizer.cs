@@ -9,9 +9,9 @@ public class TrigonometryVisualizer() : ShaderVisualizer("Trigonometry", Calcula
     private static SKColor CalculatePixel(int x, int y)
     {
         return new SKColor(
-            (byte)(Math.Sin((double)x / 100) * 127 + 128),
-            (byte)(Math.Cos((double)y / 100) * 127 + 128),
-            (byte)(Math.Tan((double)x / 100) * 127 + 128),
+            (byte)(Math.Sin((double)x / y) * 127 + 128),
+            (byte)(Math.Cos((double)y / x) * 127 + 128),
+            (byte)(Math.Tan((double)x * y / 100) * 127 + 128),
             255);
     }
 }
