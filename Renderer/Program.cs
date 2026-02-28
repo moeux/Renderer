@@ -21,11 +21,6 @@ internal class Program
         return AppBuilder.Configure<App>()
             .UseSkia()
             .UsePlatformDetect()
-            .With(new X11PlatformOptions
-            {
-                UseDBusMenu = false,
-                UseDBusFilePicker = false
-            })
             .WithInterFont()
             .LogToTrace();
     }
