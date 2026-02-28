@@ -19,8 +19,8 @@ public abstract class VisualizerBase(string name) : IVisualizer
         var x = (float)bounds.Right - _paint.MeasureText(name);
         var height = _paint.TextSize + 10;
 
+        DrawFrame(canvas, bounds, _stopwatch.Elapsed.Ticks);
         CalculateFps();
-        DrawFrame(canvas, bounds);
         canvas.DrawRoundRect(5, 5, _paint.MeasureText($"{_fps:0.0}") + 10, height, 5, 5, _backgroundPaint);
         canvas.DrawText($"{_fps:0.0}", 10, 30, _paint);
         canvas.DrawRoundRect(x - 15, 5, _paint.MeasureText(name) + 10, height, 5, 5, _backgroundPaint);
@@ -56,5 +56,5 @@ public abstract class VisualizerBase(string name) : IVisualizer
         _lastUpdate = now;
     }
 
-    protected abstract void DrawFrame(SKCanvas canvas, Rect bounds);
+    protected abstract void DrawFrame(SKCanvas canvas, Rect bounds, long elapsedTicks);
 }

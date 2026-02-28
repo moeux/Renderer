@@ -12,7 +12,7 @@ public class CircleVisualizer() : VisualizerBase("Circle")
     private int _radiusStep = 1;
     private float _x;
 
-    protected override void DrawFrame(SKCanvas canvas, Rect bounds)
+    protected override void DrawFrame(SKCanvas canvas, Rect bounds, long elapsedTicks)
     {
         _x += Step;
         _radiusStep = _radius switch
