@@ -3,11 +3,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:render="clr-namespace:Renderer.Rendering"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="430"
+        mc:Ignorable="d" d:DesignWidth="850" d:DesignHeight="515"
         x:Class="Renderer.MainWindow"
         Title="Renderer"
-        Width="800"
-        Height="430"
+        Width="850"
+        Height="515"
         WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
