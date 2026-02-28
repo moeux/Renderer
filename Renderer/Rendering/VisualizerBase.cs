@@ -21,6 +21,7 @@ public abstract class VisualizerBase(string name) : IVisualizer
 
         DrawFrame(canvas, bounds, _stopwatch.Elapsed.Ticks - _lastUpdate);
         CalculateFps();
+        DrawFrame(canvas, bounds);
         canvas.DrawRoundRect(5, 5, _paint.MeasureText($"{_fps:0.0}") + 10, height, 5, 5, _backgroundPaint);
         canvas.DrawText($"{_fps:0.0}", 10, 30, _paint);
         canvas.DrawRoundRect(x - 15, 5, _paint.MeasureText(name) + 10, height, 5, 5, _backgroundPaint);
