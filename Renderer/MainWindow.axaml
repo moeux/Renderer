@@ -8,6 +8,7 @@
         Title="Renderer"
         Width="850"
         Height="515"
+        CanResize="False"
         WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
