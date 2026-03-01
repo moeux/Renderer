@@ -25,6 +25,7 @@ public partial class MainWindow : Window
             new ImageVisualizer(),
             new ModuloVisualizer(),
             new PongVisualizer(),
+            new SpriteVisualizer(),
             new TrigonometryVisualizer());
     }
 
