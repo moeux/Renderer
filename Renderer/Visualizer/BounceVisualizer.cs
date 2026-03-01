@@ -62,17 +62,11 @@ public class BounceVisualizer() : VisualizerBase("Bounce")
         _radiusY -= DeformStep * _squashDirection;
         _radiusX += DeformStep * _squashDirection;
 
-        if (_radiusY <= MinRadiusY)
-        {
-            _squashDirection = -1f;
-        }
+        if (_radiusY <= MinRadiusY) _squashDirection = -1f;
 
         if (!(_radiusX >= MaxRadiusX)) return;
 
-        if (!_isGrounded)
-        {
-            TryReboundOrRest();
-        }
+        if (!_isGrounded) TryReboundOrRest();
 
         _isGrounded = true;
         ResetShape();
@@ -98,10 +92,7 @@ public class BounceVisualizer() : VisualizerBase("Bounce")
         _y = floorY;
         _restTicks += elapsedTicks;
 
-        if (_restTicks >= RestartDelayTicks)
-        {
-            ResetCycle();
-        }
+        if (_restTicks >= RestartDelayTicks) ResetCycle();
     }
 
     private void ResetCycle()
