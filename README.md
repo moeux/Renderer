@@ -9,9 +9,9 @@ The app hosts multiple visualizer implementations and lets you switch between th
 ## Features
 
 - Real-time rendering on a Skia canvas inside Avalonia
-- Multiple built-in visualizers (shader-style and animation-style)
-- Simple next/previous navigation between visualizers (via the buttons or Left/Right arrow keys)
-- Shared FPS and visualizer name overlay via a base class
+- Multiple built-in visualizers (shader-style, animation-style, image/sprite, and mini-game style)
+- Next/previous visualizer navigation via UI buttons or `Left`/`Right` arrow keys
+- Shared FPS and visualizer-name overlay via `VisualizerBase`
 
 ## Getting Started
 
@@ -25,6 +25,8 @@ The app hosts multiple visualizer implementations and lets you switch between th
 dotnet restore
 dotnet run --project Renderer/Renderer.csproj
 ```
+
+Run from the repository root so relative asset paths resolve correctly.
 
 ## Project Structure
 
@@ -40,19 +42,29 @@ Renderer/
     SkiaDrawOperation.cs        Avalonia -> Skia drawing bridge
   Visualizer/
     ArithmeticVisualizer.cs
-    ModuloVisualizer.cs
-    TrigonometryVisualizer.cs
-    CircleVisualizer.cs
     BounceVisualizer.cs
+    CircleVisualizer.cs
+    ImageVisualizer.cs
+    ModuloVisualizer.cs
+    PongVisualizer.cs
+    SpriteVisualizer.cs
+    TrigonometryVisualizer.cs
+img/
+  banner.png                    README banner and image visualizer source
+sprites/
+  samurai.png                   Sprite sheet used by SpriteVisualizer
 ```
 
 ## Built-in Visualizers
 
 - `ArithmeticVisualizer`: shader pattern based on arithmetic operations on `(x, y)`.
-- `ModuloVisualizer`: grayscale modulo-based shader pattern.
-- `TrigonometryVisualizer`: color channels generated from `sin/cos/tan` formulas.
-- `CircleVisualizer`: moving circle animation with dynamic radius.
 - `BounceVisualizer`: bouncing ball animation with squash/stretch behavior.
+- `CircleVisualizer`: moving circle animation with dynamic radius.
+- `ImageVisualizer`: draws the project banner centered on screen.
+- `ModuloVisualizer`: grayscale modulo-based shader pattern.
+- `PongVisualizer`: autonomous Pong simulation with accelerating ball and round reset.
+- `SpriteVisualizer`: sprite-sheet animation rendered over a sky-blue background.
+- `TrigonometryVisualizer`: color channels generated from `sin/cos/tan` formulas.
 
 ### Arithmetic Visualizer
 
@@ -149,7 +161,10 @@ _surface?.AddVisualizer(
     new ArithmeticVisualizer(),
     new BounceVisualizer(),
     new CircleVisualizer(),
+    new ImageVisualizer(),
     new ModuloVisualizer(),
+    new PongVisualizer(),
+    new SpriteVisualizer(),
     new TrigonometryVisualizer(),
     new MyVisualizer());
 ```
