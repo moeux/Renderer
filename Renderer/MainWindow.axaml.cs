@@ -23,6 +23,7 @@ public partial class MainWindow : Window
             new BounceVisualizer(),
             new CircleVisualizer(),
             new ModuloVisualizer(),
+            new PongVisualizer(),
             new TrigonometryVisualizer());
     }
 
