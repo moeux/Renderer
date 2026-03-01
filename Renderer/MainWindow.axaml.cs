@@ -22,6 +22,7 @@ public partial class MainWindow : Window
             new ArithmeticVisualizer(),
             new BounceVisualizer(),
             new CircleVisualizer(),
+            new ImageVisualizer(),
             new ModuloVisualizer(),
             new PongVisualizer(),
             new TrigonometryVisualizer());
